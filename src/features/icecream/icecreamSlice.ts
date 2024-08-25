@@ -5,7 +5,7 @@ type InitialState = {
 }
 
 const initialState: InitialState = {
-  numOfIcecreams: 10
+  numOfIcecreams: 4
 }
 
 const icecreamSlice = createSlice({

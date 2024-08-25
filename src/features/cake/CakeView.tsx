@@ -7,11 +7,19 @@ export const CakeView = () => {
   const dispatch = useAppDispatch()
   const [restockAmount, setRestockAmount] = useState(1)
 
+  const handleOrder = () => {
+    if (numOfCakes > 0) {
+      dispatch(ordered())
+    } else {
+      alert('Out of stock! Please restock first.')
+    }
+  }
+
   return (
-    <div style={{ padding: '0px', textAlign: 'center' }}>
-      <h2>Cakes Available: {numOfCakes}</h2>
+    <div style={{ padding: '20px', textAlign: 'center' }}>
+      <h3>Cakes Available: {numOfCakes}</h3>
       <button 
-        onClick={() => dispatch(ordered())}
+        onClick={handleOrder}
         className="App-button order-button"
       >
         Order Cake

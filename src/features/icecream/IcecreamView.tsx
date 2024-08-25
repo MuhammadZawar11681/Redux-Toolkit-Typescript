@@ -1,17 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useAppSelector, useAppDispatch } from '../../app/hooks'
 import { ordered, restocked } from './icecreamSlice'
 
 export const IcecreamView = () => {
-  const [value, setValue] = React.useState(1)
+  const [value, setValue] = useState(1)
   const numOfIcecreams = useAppSelector(state => state.icecream.numOfIcecreams)
   const dispatch = useAppDispatch()
 
+  const handleOrder = () => {
+    if (numOfIcecreams > 0) {
+      dispatch(ordered())
+    } else {
+      alert('Out of stock! Please restock first.')
+    }
+  }
+
   return (
-    <div>
-      <h2>Ice Creams Available: {numOfIcecreams}</h2>
+    <div style={{ padding: '20px', textAlign: 'center' }}>
+      <h3>Ice Creams Available: {numOfIcecreams}</h3>
       <button 
-        onClick={() => dispatch(ordered())}
+        onClick={handleOrder}
         className="App-button order-button"
       >
         Order Ice Cream
@@ -27,7 +35,7 @@ export const IcecreamView = () => {
           onClick={() => dispatch(restocked(value))}
           className="App-button restock-button"
         >
-          Restock Ice Creams
+          Restock
         </button>
       </div>
     </div>
