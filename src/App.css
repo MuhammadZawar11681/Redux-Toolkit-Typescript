@@ -1,0 +1,88 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f7f9fc;
+  color: #333;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+}
+
+.App-content {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.App-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.App-card:hover {
+  transform: translateY(-5px);
+}
+
+.App-button {
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.order-button {
+  background-color: #f28c8c;
+}
+
+.order-button:hover {
+  background-color: #e07474;
+}
+
+.restock-button {
+  background-color: #8cc6f2;
+}
+
+.restock-button:hover {
+  background-color: #74aee0;
+}
+
+.App-input {
+  padding: 10px;
+  width: 60px;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.App-error {
+  color: red;
+  margin-top: 10px;
+}
+
+.App-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.App-list-item {
+  background: #f1f1f1;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+}
