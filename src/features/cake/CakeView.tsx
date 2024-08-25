@@ -15,6 +15,14 @@ export const CakeView = () => {
     }
   }
 
+  const handleRestock = () => {
+    if (restockAmount <= 10) {
+      dispatch(restocked(restockAmount))
+    } else {
+      alert('You can restock 10 or less than 10 in one time.')
+    }
+  }
+
   return (
     <div style={{ padding: '20px', textAlign: 'center' }}>
       <h3>Cakes Available: {numOfCakes}</h3>
@@ -32,7 +40,7 @@ export const CakeView = () => {
           className="App-input"
         />
         <button 
-          onClick={() => dispatch(restocked(restockAmount))}
+          onClick={handleRestock}
           className="App-button restock-button"
         >
           Restock Cakes

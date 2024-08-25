@@ -15,6 +15,14 @@ export const IcecreamView = () => {
     }
   }
 
+  const handleRestock = () => {
+    if (value <= 10) {
+      dispatch(restocked(value))
+    } else {
+      alert('You can restock 10 or less than 10 in one time.')
+    }
+  }
+
   return (
     <div style={{ padding: '20px', textAlign: 'center' }}>
       <h3>Ice Creams Available: {numOfIcecreams}</h3>
@@ -32,10 +40,10 @@ export const IcecreamView = () => {
           className="App-input"
         />
         <button 
-          onClick={() => dispatch(restocked(value))}
+          onClick={handleRestock}
           className="App-button restock-button"
         >
-          Restock
+          Restock IceCrem
         </button>
       </div>
     </div>
